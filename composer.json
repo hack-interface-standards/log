@@ -1,0 +1,29 @@
+{
+    "name": "usox/log",
+    "description": "Interfaces for logger service integration",
+    "type": "library",
+    "keywords": [
+        "hack",
+        "hacklang",
+        "hhvm",
+        "logging"
+    ],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Daniel Jakob",
+            "email": "dev@usox.org"
+        }
+    ],
+    "require": {
+        "hhvm": "^4.0"
+    },
+    "require-dev": {
+        "hhvm/hhast": "^4.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Usox\\Log\\": "src"
+        }
+    }
+}
