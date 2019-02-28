@@ -1,9 +1,9 @@
-namespace Usox\Log;
+namespace His\Log;
 
 /**
  * Describes a logger instance.
  *
- * The message MUST be a string or object implementing __toString().
+ * The message MUST be a string.
  *
  * The message MAY contain placeholders in the form: {foo} where foo
  * will be replaced by the context data in key "foo".
@@ -18,7 +18,7 @@ interface LoggerInterface {
   /**
    * System is unusable.
    */
-  public function emergency(string $message, dict<string,mixed> $context = dict[]): void;
+  public function emergency(string $message, dict<arraykey,mixed> $context = dict[]): void;
 
   /**
    * Action must be taken immediately.
@@ -26,20 +26,20 @@ interface LoggerInterface {
    * Example: Entire website down, database unavailable, etc. This should
    * trigger the SMS alerts and wake you up.
    */
-  public function alert(string $message, dict<string,mixed> $context = dict[]): void;
+  public function alert(string $message, dict<arraykey,mixed> $context = dict[]): void;
 
   /**
    * Critical conditions.
    *
    * Example: Application component unavailable, unexpected exception.
    */
-  public function critical(string $message, dict<string,mixed> $context = dict[]): void;
+  public function critical(string $message, dict<arraykey,mixed> $context = dict[]): void;
 
   /**
    * Runtime errors that do not require immediate action but should typically
    * be logged and monitored.
    */
-  public function error(string $message, dict<string,mixed> $context = dict[]): void;
+  public function error(string $message, dict<arraykey,mixed> $context = dict[]): void;
 
   /**
    * Exceptional occurrences that are not errors.
@@ -47,27 +47,27 @@ interface LoggerInterface {
    * Example: Use of deprecated APIs, poor use of an API, undesirable things
    * that are not necessarily wrong.
    */
-  public function warning(string $message, dict<string,mixed> $context = dict[]): void;
+  public function warning(string $message, dict<arraykey,mixed> $context = dict[]): void;
 
   /**
    * Normal but significant events.
    */
-  public function notice(string $message, dict<string,mixed> $context = dict[]): void;
+  public function notice(string $message, dict<arraykey,mixed> $context = dict[]): void;
 
   /**
    * Interesting events.
    *
    * Example: User logs in, SQL logs.
    */
-  public function info(string $message, dict<string,mixed> $context = dict[]): void;
+  public function info(string $message, dict<arraykey,mixed> $context = dict[]): void;
 
   /**
    * Detailed debug information.
    */
-  public function debug(string $message, dict<string,mixed> $context = dict[]): void;
+  public function debug(string $message, dict<arraykey,mixed> $context = dict[]): void;
 
   /**
    * Logs with an arbitrary level.
    */
-  public function log(LogLevel $level, string $message, dict<string,mixed> $context = dict[]): void;
+  public function log(LogLevel $level, string $message, dict<arraykey,mixed> $context = dict[]): void;
 }
